@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="After Hours: a focused music-video player with a distraction-free Cinema mode." />
+    <title>After Hours — Music in motion</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- The music-video context makes sustained watching and listening the main
+    task. This layout therefore places one large video ahead of supporting
+    text. The starter's header, navigation, player, content section and footer
+    remain recognisable. Navigation links now lead to real sections rather
+    than empty destinations, avoiding interactions that suggest an unavailable
+    playlist. A single featured video keeps the scope clear and makes the
+    player the strongest visual element on the page. -->
+    <a class="skip-link" href="#watch">Skip to player</a>
+    <header class="site-header">
+      <a href="#watch" class="wordmark" aria-label="After Hours home">AFTER HOURS<span aria-hidden="true">/01</span></a>
+      <nav aria-label="Main navigation"><ul><li><a href="#watch">Watch</a></li><li><a href="#about">The experience ↗</a></li></ul></nav>
+    </header>
+    <main class="container" id="watch">
+      <div class="intro">
+        <div><p class="eyebrow">A space for sound & moving image</p><h1>Music. In motion.</h1></div>
+        <p class="edition">ONE VIDEO.<br>YOUR FULL ATTENTION.</p>
+      </div>
+      <div class="media-player" aria-label="Music video player">
+        <div class="screen">
+          <video id="custom-video-player" controls playsinline preload="metadata" aria-label="Featured music video">
+            <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4" type="video/mp4" />
+            Your browser does not support this video.
+          </video>
+        </div>
+        <!-- Buttons and labelled range inputs give the interface native keyboard
+        behaviour. Text labels make controls understandable without recognising
+        an icon. The seek slider has elapsed and total time for precise feedback.
+        Native video controls are retained until JavaScript initialises, leaving
+        playback available when scripting is disabled. Playback is deliberately
+        not automatic: viewers choose when sound begins and can set their own
+        listening level without being surprised by an unexpected soundtrack. -->
+        <div class="custom-controls" hidden>
+          <div class="timeline">
+            <output id="current-time" aria-label="Elapsed time">0:00</output>
+            <div class="progress-bar"><span id="progress-bar-fill"></span><input id="seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Seek video" disabled /></div>
+            <output id="duration" aria-label="Video duration">0:00</output>
+          </div>
+          <div class="control-row">
+            <div class="transport">
+              <button id="play-pause-btn" class="play-button" type="button">Play</button>
+              <button id="replay-btn" type="button" title="Restart video">↺ <span>Replay</span></button>
+              <button id="mute-btn" type="button" aria-pressed="false">Mute</button>
+              <label class="volume-label">Volume <input id="volume" type="range" min="0" max="1" step="0.05" value="0.7" /></label>
+            </div>
+            <button id="cinema-btn" type="button" aria-pressed="false">Cinema mode ↗</button>
+          </div>
+        </div>
+        <div class="player-caption"><span><span class="status-dot" aria-hidden="true"></span><span id="playback-status" role="status">Ready when you are</span></span><span>MUSIC VIDEO / 01</span></div>
+      </div>
+      <section id="about" class="about">
+        <div><p class="eyebrow">The experience</p><h2>Less around it.<br>More from it.</h2></div>
+        <div class="about-copy"><p>A quiet frame for a loud idea. Put on your headphones, press play and give the moving image a moment.</p><p>For a closer look, switch on Cinema mode. The frame expands and the room fades. Press Escape to come back.</p></div>
+        <div class="session-note"><span class="eyebrow">Viewing notes</span><p>Headphones recommended<br>No autoplay. Set your pace.</p></div>
+      </section>
+    </main>
+    <footer>
+      <span>AFTER HOURS / MUSIC IN MOTION</span>
+      <details><summary>Credits & sources</summary><div class="credits">
+        <p>Video: <a href="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4">miac.mp4</a>, supplied in the <a href="https://rmit.instructure.com/courses/163616/pages/assignment-2-resources">RMIT OART1013 Assignment 2 resources</a>. Video and music rights remain with their respective owners.</p>
+        <p>Starter code: <a href="https://rohitashokkhot.github.io/mediaplayer/">Rohit Ashok Khot</a>. CSS reset: Kevin Powell, as supplied with the starter.</p>
+        <p>AI acknowledgement: OpenAI Codex assisted with the layout, code, explanatory comments, testing and publication preparation. The music-video context was selected by the student.</p>
+      </div></details>
+    </footer>
+  </body>
+</html>
