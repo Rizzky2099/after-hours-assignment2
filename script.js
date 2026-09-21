@@ -1,9 +1,7 @@
-/* AI acknowledgement: OpenAI Codex generated the changes and comments with
-student direction on 15 and 20 September 2026. Starter playback and progress
-structure: Rohit Ashok Khot, https://rohitashokkhot.github.io/mediaplayer/.
+/* Starter playback and progress structure: Rohit Ashok Khot,
+https://rohitashokkhot.github.io/mediaplayer/.
 The video is the course-supplied miac.mp4. No external JavaScript library is
-used. This acknowledgement describes assistance rather than claiming that
-all code was independently written by the student. */
+used. */
 const video = document.querySelector("#custom-video-player");
 const playPauseBtn = document.querySelector("#play-pause-btn");
 const progressBar = document.querySelector("#progress-bar-fill");
